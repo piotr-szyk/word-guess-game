@@ -1,67 +1,35 @@
-# 🧠 Word Guess Game — Keyboard Typing Challenge (28-Stu_WordGuess)
+# 🧠 Word Guess: Event-Driven Keyboard Challenge
 
-Work to complete an interactive **Word Guess Game** where players type letters on their keyboard to guess a hidden coding term or a topic of your choosing.
+A polished, interactive word-guessing game built with modern JavaScript (ES6+) and Bootstrap 5. This project demonstrates the transition from basic logic to event-driven programming and real-time DOM manipulation.
 
----
-
-## 👤 User Story
-
-> **As a player,**  
-> I want to guess a hidden programming term by typing letters,  
-> so that I can practice JavaScript while having fun.
+![Difficulty: Hard](https://img.shields.io/badge/Difficulty-Hard-red?style=for-the-badge)
+![Topic: Event Driven Programming](https://img.shields.io/badge/Topic-Events_&_DOM-blue?style=for-the-badge)
+![Standard: ES6+](https://img.shields.io/badge/Standard-ES6%2B-yellow?style=for-the-badge)
 
 ---
 
-## ✅ Acceptance Criteria
+## 🎯 Project Overview
+The objective was to create a "Hangman" style experience where the browser "listens" for user input. Unlike prompt-based applications, this project manages a continuous "Game State," updating the UI dynamically as the user interacts with their physical keyboard.
 
-- **It’s done when** the player can type any letter on their keyboard to make a guess.  
-- **It’s done when** correct letters are revealed in the masked word.  
-- **It’s done when** incorrect guesses reduce the player’s remaining attempts.  
-- **It’s done when** the game detects a win when all letters are guessed.  
-- **It’s done when** the game detects a loss when attempts reach zero.  
-- **It’s done when** a new random word is selected after a win or loss.  
+## 🚀 Live Demo
+[Play the Word Guess Game Here](https://piotr-szyk.github.io/word-guess-game/)
 
----
+## 🛠️ Technical Implementation
+This project showcases several advanced frontend development concepts:
 
-## 🧱 Your Task
+* **Global Event Listeners:** Utilizing `window.addEventListener("keydown")` to capture user input globally without the need for input fields.
+* **State Management:** Tracking `guessedLetters`, `attempts`, and `maskedWord` through a centralized logic function.
+* **Declarative Data Transformation:** Using Method Chaining (`.split().map().join()`) and Ternary Operators to calculate the masked word state efficiently.
+* **DOM Manipulation:** Utilizing `document.getElementById` and `.textContent` to sync JavaScript variables with the HTML UI in real-time.
+* **Input Sanitization:** Implementing Regular Expressions (Regex) to ensure only alphabetic characters trigger game logic.
 
-You’ve been provided an HTML file styled with Bootstrap and a JavaScript starter that includes:
-- A **keyboard event listener** that triggers on key press  
-- A **word bank** of coding-related terms or otherwise (your choice) (e.g., `"javascript"`, `"array"`, `"loop"`)  
-- Empty placeholder text for the masked word, guessed letters, and attempts  
+## ✨ Key Features
+- **Responsive UI:** Styled with Bootstrap 5 and custom CSS gradients for a modern, "Glassmorphism" look.
+- **Real-Time Feedback:** Immediate visual updates for correct/incorrect guesses and remaining lives.
+- **Smart Validation:** Prevents duplicate guesses and ignores non-alphabetic keys.
+- **Automated Reset:** Seamlessly resets game state upon victory or defeat.
 
-Your task is to complete the logic inside the provided function to:
-1. Update the masked word display as the player guesses letters.  
-2. Track guessed letters and prevent duplicates.  
-3. Subtract from the total attempts for incorrect guesses.  
-4. Show a win or loss alert and restart the game.  
-5. Update the DOM dynamically so the page reflects the current game state.
-
----
-
-## 💡 Hints
-
-- Use `.split("")` and `.map()` to rebuild the masked word.  
-- Use `.includes()` to check for duplicates and correct guesses.  
-- Convert all letters to lowercase before comparison.  
-- Use the **Bootstrap IDs** in the HTML to update the text (`maskedWord`, `attempts`, `guessedLetters`).  
-- Log values in the console for debugging (`console.log(chosenWord)` is okay for testing).  
-
----
-
-## 🧠 Bonus Challenges
-
-- Add sound effects for correct and incorrect guesses.  
-- Add a restart button that refreshes the word without reloading the page.  
-- Display a short success animation when the word is guessed.  
-- Add categories (e.g., “JavaScript Terms,” “Web Concepts,” etc.).  
-
----
-
-## ✅ Quick Checklist
-
-- [ ] Typing letters updates the masked word  
-- [ ] Attempts decrease with wrong guesses  
-- [ ] Game resets after win/loss  
-- [ ] DOM updates dynamically  
-- [ ] (Bonus) Added restart or sound effects  
+## 📂 Structure
+- `index.html`: Semantic HTML5 with Bootstrap integration.
+- `script.js`: The "brain" of the game, handling all logic and events.
+- `style.css`: Custom layout overrides and typography.
